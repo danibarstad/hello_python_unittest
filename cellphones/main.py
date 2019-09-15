@@ -15,10 +15,12 @@ def main():
     employee1 = Employee(1, 'Alice')
     employee2 = Employee(2, 'Bill')
     employee3 = Employee(3, 'Ted')
+    employee4 = Employee(3, 'Dani')
 
     assignments.add_employee(employee1)
     assignments.add_employee(employee2)
     assignments.add_employee(employee3)
+    assignments.add_employee(employee4)
 
     assignments.assign(phone1.id, employee2)  # Assign phone 1 to employee 2
     assignments.assign(phone2.id, employee3)  # Assign phone 2 to employee 3

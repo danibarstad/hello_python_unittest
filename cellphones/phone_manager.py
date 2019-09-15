@@ -3,6 +3,7 @@
 
 # Each employee gets 0 or 1 phones
 
+
 class Phone():
 
     def __init__(self, id, make, model):
@@ -46,7 +47,12 @@ class PhoneAssignments():
 
     def add_employee(self, employee):
         # TODO raise exception if two employees with same ID are added
-        self.employees.append(employee)
+        
+        for e in self.employees:
+            if e.id == employee.id:
+                raise PhoneError('Two or more employees with the same ID were added')
+            else:
+                self.employees.append(employee)
 
 
     def add_phone(self, phone):
@@ -81,6 +87,8 @@ class PhoneAssignments():
         for phone in self.phones:
             if phone.employee_id == employee.id:
                 return phone
+            # else:
+            #     raise NameError('Employee %s does not exist' % employee)
 
 
         return None
