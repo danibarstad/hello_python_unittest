@@ -42,7 +42,15 @@ class TestPhoneManager(unittest.TestCase):
         # TODO write this test and then remove the self.fail() statement
         # TODO you'll need to fix the add_employee method in PhoneAssignments to make this test PhoneAssignments
         # This method will be similar to test_create_and_add_phone_with_duplicate_id
-        self.fail()
+        testEmployee1 = Employee(1, 'Noel')
+        testEmployee2 = Employee(1, 'Liam')
+
+        testAssignmentMgr = PhoneAssignments()
+        testAssignmentMgr.add_employee(testEmployee1)
+
+        with self.assertRaises(PhoneError):
+            testAssignmentMgr.add_employee(testEmployee2)
+        # self.fail()
 
 
     def test_assign_phone_to_employee(self):
