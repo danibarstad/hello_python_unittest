@@ -51,8 +51,6 @@ class PhoneAssignments():
         for item in self.employees:
             if employee.id == item.id:
                 raise PhoneError('two employees with the same ID were added')
-            else:
-                break
 
         self.employees.append(employee)
         
