@@ -43,6 +43,7 @@ class TestPhoneManager(unittest.TestCase):
         testAssignmentMgr.add_employee(testEmployee2)
 
         self.assertIn(testEmployee1, testAssignmentMgr.employees)
+        self.assertIn(testEmployee2, testAssignmentMgr.employees)
         
         # self.fail()
 
