@@ -44,7 +44,6 @@ class TestPhoneManager(unittest.TestCase):
 
         self.assertIn(testEmployee1, testAssignmentMgr.employees)
         self.assertIn(testEmployee2, testAssignmentMgr.employees)
-        
         # self.fail()
 
 
@@ -94,8 +93,17 @@ class TestPhoneManager(unittest.TestCase):
 
     def test_un_assign_phone(self):
         # TODO write this test and remove the self.fail() statement
-        # Assign a phone, unasign the phone, verify the employee_id is None
-        self.fail()
+        # Assign a phone, unassign the phone, verify the employee_id is None
+        testEmployee = Employee(1, 'Andre the Giant')
+        testPhone = Phone(1, 'Google', 'Pixel 3a')
+
+        testAssignmentMgr = PhoneAssignments()
+
+        testAssignmentMgr.assign(testPhone.id, testEmployee)
+        testAssignmentMgr.un_assign(testPhone.id)
+
+        self.assertIsNone(testAssignmentMgr.phone_info(testEmployee))
+        # self.fail()
 
 
     def test_get_phone_info_for_employee(self):
