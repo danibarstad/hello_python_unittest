@@ -77,21 +77,18 @@ class TestPhoneManager(unittest.TestCase):
 
         testEmployee = Employee(1, 'Milli')
         testEmployee2 = Employee(2, 'Vanilli')
-
         testPhone = Phone(1, 'Apple', 'iPhone ∞')
 
         testAssignmentMgr = PhoneAssignments()
 
         testAssignmentMgr.add_employee(testEmployee)
         testAssignmentMgr.add_employee(testEmployee2)
-
         testAssignmentMgr.add_phone(testPhone)
         
         testAssignmentMgr.assign(testPhone.id, testEmployee)
 
         with self.assertRaises(PhoneError):
             testAssignmentMgr.assign(testPhone.id, testEmployee2)
-
         # self.fail()
 
 
