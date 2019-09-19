@@ -76,7 +76,6 @@ class TestPhoneManager(unittest.TestCase):
         testAssignmentMgr.assign(testPhone.id, testEmployee)
 
         self.assertTrue(testPhone.is_assigned, True)
-
         # self.fail()
 
 
@@ -115,7 +114,6 @@ class TestPhoneManager(unittest.TestCase):
         
         with self.assertRaises(PhoneError):
             testAssignmentMgr.assign(testPhone2.id, testEmployee)
-
         # self.fail()
 
 
@@ -130,7 +128,7 @@ class TestPhoneManager(unittest.TestCase):
         testAssignmentMgr.assign(testPhone.id, testEmployee)
 
 
-        self.fail()
+        # self.fail()
 
 
     def test_un_assign_phone(self):
