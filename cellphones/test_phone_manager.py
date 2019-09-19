@@ -130,12 +130,18 @@ class TestPhoneManager(unittest.TestCase):
         # TODO check that the method raises an PhoneError if the employee does not exist
         testEmployee1 = Employee(1, 'Dani')
         testEmployee2 = Employee(2, 'Beryl')
-        # testEmployee3 = Employee(3, 'Archie')
+        testEmployee3 = Employee(3, 'Archie')
 
         testPhone1 = Phone(1, 'Apple', 'New iPhone 10 Pro XL lite++ Max')
         testPhone2 = Phone(2, 'Nintendo', 'Nintendo Switch Cell Phone')
 
         testAssignmentMgr = PhoneAssignments()
+
+        testAssignmentMgr.add_employee(testEmployee1)
+        testAssignmentMgr.add_employee(testEmployee2)
+        testAssignmentMgr.add_employee(testEmployee3)
+        testAssignmentMgr.add_phone(testPhone1)
+        testAssignmentMgr.add_phone(testPhone2)
 
         testAssignmentMgr.assign(testPhone1.id, testEmployee1)
         testAssignmentMgr.assign(testPhone2.id, testEmployee2)
