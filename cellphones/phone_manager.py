@@ -74,7 +74,10 @@ class PhoneAssignments():
         for phone in self.phones:
             if phone.id == phone_id:
                 if phone.is_assigned():
-                    raise PhoneError('phone is already assigned to an employee')
+                    if phone.id == employee.id:
+                        return
+                    else:
+                        raise PhoneError('phone is already assigned to an employee')
                 else:
                     phone.assign(employee.id)
                     return
