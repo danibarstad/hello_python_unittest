@@ -38,12 +38,13 @@ class TestPhoneManager(unittest.TestCase):
         testEmployee1 = Employee(1, 'James')
         testEmployee2 = Employee(2, 'Dani')
 
+        testEmployees = [ testEmployee1, testEmployee2 ]
+
         testAssignmentMgr = PhoneAssignments()
         testAssignmentMgr.add_employee(testEmployee1)
         testAssignmentMgr.add_employee(testEmployee2)
 
-        self.assertIn(testEmployee1, testAssignmentMgr.employees)
-        self.assertIn(testEmployee2, testAssignmentMgr.employees)
+        self.assertCountEqual(testEmployees, testAssignmentMgr.employees)
         # self.fail()
 
 
